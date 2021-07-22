@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+@import url(//db.onlinewebfonts.com/c/2a32094b74bdd4607c616294a8a90740?family=Peace+Sans);
+
+
+
+@font-face {font-family: "Peace Sans"; src: url("//db.onlinewebfonts.com/t/2a32094b74bdd4607c616294a8a90740.eot"); src: url("//db.onlinewebfonts.com/t/2a32094b74bdd4607c616294a8a90740.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/2a32094b74bdd4607c616294a8a90740.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/2a32094b74bdd4607c616294a8a90740.woff") format("woff"), url("//db.onlinewebfonts.com/t/2a32094b74bdd4607c616294a8a90740.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/2a32094b74bdd4607c616294a8a90740.svg#Peace Sans") format("svg"); }
+
+
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  color: #000000;
+}
+
+.zago{
+  padding-top: 70px;
+  font-size: 150px;
+  color: #0088dd;
+  font-family: "Peace Sans";
+}
+
+.form {
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  border-radius: 7px;
+  box-sizing: border-box;
+  height: 500px;
+  padding: 20px;
+  width: 450px;
+  margin-top: 70px;
+  margin-left: 30px;
+}
+
+.title {
+  color: rgb(10, 10, 10);
+  font-size: 36px;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 30px;
+}
+
+.subtitle {
+  color: rgb(90, 90, 90);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.input-container {
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.ic1 {
+  margin-top: 40px;
+}
+
+.ic2 {
+  margin-top: 30px;
+}
+
+.input {
+  background-color: #e0e0e0;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: black;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+}
+
+
+.submit {
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  outline: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.submit:active {
+  background-color: #06b;
+}
