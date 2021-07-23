@@ -7,13 +7,8 @@ from django.contrib.auth import authenticate, logout, login
 
 # Create your views here.
 
-def homepage(request):
-    return render(request, "index.html")
-
-
 def main(request):
     return render(request, "main.html")
-
 
 
 def sign_in(request):
