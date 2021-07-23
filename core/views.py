@@ -35,3 +35,8 @@ def register(request):
         user.save()
         
         return redirect(main)
+
+
+def sign_out(request):
+    logout(request)
+    return redirect(sign_in)
