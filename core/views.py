@@ -1,9 +1,11 @@
 from django.contrib import auth
 from django.http import request
-from django.shortcuts import render, redirect
+from django.shortcuts import get_object_or_404, render, redirect
 from .models import *
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout, login
+from django.core.exceptions import ObjectDoesNotExist
+from django.http import Http404
 
 # Create your views here.
 
@@ -41,3 +43,26 @@ def register(request):
 def sign_out(request):
     logout(request)
     return redirect(sign_in)
+
+
+
+
+def add_like(request, pk):
+    try:
+        if request.user.is_authenticated:
+            public = Publics.objects.get(pk=pk)
+            public.likes += 1
+            public.save()
+    except:
+        return redirect(register)
+    return redirect(main)
+
+
+def add_dislike(request, slug):
+    try:
+        public = get_object_or_404(Publics, slug=slug)
+        public.dislikes += 1
+        public.save()
+    except ObjectDoesNotExist:
+        return Http404
+    return redirect(request.GET.get('next', '/'))

@@ -74,21 +74,10 @@
                         <div class="main-public2">
                             <h1 class="public-zago">{{ public.title }}</h1>
                             <p class="public-text">{{ public.text }}</p>
-                            <input id="toggle-heart" type="checkbox"/>
-                            <label for="toggle-heart" aria-label="like">❤ {{ public.likes }} Лайков</label>
-
-                            <ul>
-                                <li data-id="{{ like_obj.id }}" data-type="article" data-action="like" title="Нравится">
-                                    <span class="glyphicon glyphicon-thumbs-up"></span>
-                                    <span data-count="like">{{ like_obj.votes.likes.count }}</span>
-                                </li>
-                                <li data-id="{{ like_obj.id }}" data-type="article" data-action="dislike" title="Не нравится">
-                                    <span class="glyphicon glyphicon-thumbs-down"></span>
-                                    <span data-count="dislike">{{ like_obj.votes.dislikes.count }}</span>
-                                </li>
-                        </ul>
+                            <label for="toggle-heart" aria-label="like"><a href="{% url 'add_like' public.pk %}" class="like">❤</a> {{ public.likes }} Лайков</label>
                         </div>
                     </div>
+                    
                 {% endfor %}
             
 
