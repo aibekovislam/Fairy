@@ -75,6 +75,7 @@
                             <h1 class="public-zago">{{ public.title }}</h1>
                             <p class="public-text">{{ public.text }}</p>
                             <label for="toggle-heart" aria-label="like"><a href="{% url 'add_like' public.pk %}" class="like">❤</a> {{ public.likes }} Лайков</label>
+                            <label for="toggle-heart" aria-label="like"><a href="{% url 'add_dislike' public.pk %}" class="like">👎🏻</a> {{ public.dislikes }} Дизлайки</label>
                         </div>
                     </div>
                     

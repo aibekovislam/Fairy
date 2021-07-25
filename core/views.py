@@ -1,6 +1,6 @@
 from django.contrib import auth
 from django.http import request
-from django.shortcuts import get_object_or_404, render, redirect
+from django.shortcuts import get_object_or_404, render, redirect, HttpResponseRedirect
 from .models import *
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout, login
@@ -55,14 +55,14 @@ def add_like(request, pk):
             public.save()
     except:
         return redirect(register)
-    return redirect(main)
+    return HttpResponseRedirect('/')
 
 
-def add_dislike(request, slug):
+def add_dislike(request, pk):
     try:
-        public = get_object_or_404(Publics, slug=slug)
-        public.dislikes += 1
+        public = Publics.objects.get(pk=pk)
+        public.dislikes -= 1
         public.save()
     except ObjectDoesNotExist:
         return Http404
-    return redirect(request.GET.get('next', '/'))
+    return redirect(main)

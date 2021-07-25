@@ -11,5 +11,6 @@ urlpatterns = [
     path('sign-in/', sign_in, name="sign-in"),
     path('register', register, name="register"),
     path('logout', sign_out, name="logout"),
-    path('add-like/<int:pk>/', add_like, name="add_like")
+    path('add-like/<int:pk>/', add_like, name="add_like"),
+    path('dislike/<int:pk>/', add_dislike, name="add_dislike")
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
