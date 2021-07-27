@@ -61,8 +61,9 @@ def add_like(request, pk):
 def add_dislike(request, pk):
     try:
         public = Publics.objects.get(pk=pk)
-        public.dislikes -= 1
+        public.dislikes += 1
         public.save()
     except ObjectDoesNotExist:
         return Http404
     return redirect(main)
+
