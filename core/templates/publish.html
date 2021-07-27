@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    
+        <div class="form">
+          <div class="title">Опубликовать</div>
+          <div class="subtitle">Начни опубликовать прямо сейчас</div>
+          <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+              <div class="input-container ic1">
+                <input type="text" class="input" name="title" placeholder="Заголовок">
+                <div class="cut"></div>
+              </div>
+              <div class="input-container ic2">
+                <input type="text" class="input" name="text" placeholder="Описание"></input>
+                <div class="cut"></div>
+              </div>
+              <div class="input-container ic2">
+                <input type="file" name="image" placeholder="Картинка">
+
+              <button type="text" class="submit">Зарегистрироваться</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
+

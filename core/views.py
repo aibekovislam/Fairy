@@ -68,3 +68,22 @@ def add_dislike(request, pk):
     return redirect(main)
 
 
+def publish(request):
+    if request.method == 'GET':
+        return render(request, "publish.html")
+    elif request.method == 'POST':
+        title = request.POST.get("title")
+        text = request.POST.get("text")
+        image = request.FILES.get("image")
+        new_publish = Publics(title=title, text=text, image=image)
+        new_publish.save()
+        user = request.user
+
+        if not Author.objects.filter(user=user).exists():
+            author = Author(user=user, nik=user.username)
+            author.save()
+
+        author = user.author
+        new_publish.author = author
+        new_publish.save()
+        return redirect (main)
