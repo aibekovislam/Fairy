@@ -33,6 +33,13 @@ class Publics(models.Model):
         verbose_name=("Пользователь"), 
         on_delete=models.CASCADE
     )
+    author = models.ForeignKey(
+        to="Author",
+        on_delete=models.SET_NULL,
+        null=True, blank=True,
+        related_name="article",
+        verbose_name=("Автор")
+    )
 
 
     readers = models.ManyToManyField(
@@ -67,8 +74,8 @@ class Author(models.Model):
     nik = models.CharField(max_length=55)
 
     class Meta:
-        verbose_name = "Авторы"
-        verbose_name_plural = "Автор"
+        verbose_name = "Автор"
+        verbose_name_plural = "Авторы"
 
     def __str__(self):
-        return self.user
+        return self.nik
