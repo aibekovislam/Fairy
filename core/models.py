@@ -65,3 +65,10 @@ class Author(models.Model):
     )
 
     nik = models.CharField(max_length=55)
+
+    class Meta:
+        verbose_name = "Авторы"
+        verbose_name_plural = "Автор"
+
+    def __str__(self):
+        return self.user
