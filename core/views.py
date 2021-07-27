@@ -47,24 +47,5 @@ def sign_out(request):
 
 
 
-def add_like(request, pk):
-    try:
-        if request.user.is_authenticated:
-            public = Publics.objects.get(pk=pk)
-            public.likes += 1
-            public.save()
-    except:
-        return redirect(register)
-    return HttpResponseRedirect('/')
 
-
-def add_dislike(request, pk):
-    try:
-        if request.user.is_authenticated:
-            public = Publics.objects.get(pk=pk)
-            public.dislikes += 1
-            public.save()
-    except ObjectDoesNotExist:
-        return Http404
-    return redirect(main)
 
