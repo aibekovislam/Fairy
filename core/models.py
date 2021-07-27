@@ -3,10 +3,6 @@ from django.contrib.auth.models import User
 from django.db.models.fields import related
 
 
-
-
-
-
 class Users(models.Model):
     acc = models.OneToOneField(
         to=User,
@@ -56,3 +52,16 @@ class Publics(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Author(models.Model):
+    user = models.OneToOneField(
+        to=User,
+        related_name="author",
+        verbose_name="Автор",
+        null=False,
+        blank=False,
+        on_delete=models.CASCADE
+    )
+
+    nik = models.CharField(max_length=55)
