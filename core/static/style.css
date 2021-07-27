@@ -336,3 +336,19 @@ body{
   font-family: "Peace Sans";
   font-weight: normal;
 }
+
+
+
+footer {
+  padding: 1% 5%;
+  text-align:center;
+  background-color: white;
+  color: black;
+  
+}
+
+footer a {
+  color: #FE4B74;
+  font-weight: 500;
+  text-decoration: none;
+}
