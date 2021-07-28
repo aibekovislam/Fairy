@@ -11,6 +11,7 @@ from django.http import Http404
 
 def main(request):
     publics = Publics.objects.all()
+    publics = Publics.objects.order_by('-date')
     return render(request, "main.html", {"publics": publics})
 
 

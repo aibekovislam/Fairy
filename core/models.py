@@ -27,6 +27,8 @@ class Publics(models.Model):
     image = models.ImageField(upload_to="Article_img", null=True, blank=True)
     likes = models.IntegerField(verbose_name='Нравится', default=0)
     dislikes = models.IntegerField(verbose_name='Не нравится', default=0)
+    date = models.DateTimeField(auto_now_add=True,
+        null=True)
     user = models.ForeignKey(
         to=Users,
         null=True, blank=True,
