@@ -85,3 +85,12 @@ def publish(request):
         new_publish.author = author
         new_publish.save()
         return redirect (main)
+
+
+def author(request, pk):
+    author = Author.objects.get(pk=pk)
+    context={
+        "author": author,
+        "user": author.user
+    }
+    return render(request, "author_page.html", context)

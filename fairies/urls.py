@@ -13,5 +13,6 @@ urlpatterns = [
     path('logout', sign_out, name="logout"),
     path('add-like/<int:pk>/', add_like, name="add_like"),
     path('dislike/<int:pk>/', add_dislike, name="add_dislike"),
-    path('publish/', publish, name="publish")
+    path('publish/', publish, name="publish"),
+    path('author/<int:pk>/', author, name="author")
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
