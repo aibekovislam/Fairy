@@ -1,6 +1,6 @@
 from django.contrib import auth
 from django.http import request
-from django.shortcuts import get_object_or_404, render, redirect, HttpResponseRedirect
+from django.shortcuts import render, redirect, HttpResponseRedirect
 from .models import *
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout, login
@@ -45,18 +45,15 @@ def sign_out(request):
     logout(request)
     return redirect(sign_in)
 
-
-
-
 def add_like(request, pk):
     try:
         if request.user.is_authenticated:
             public = Publics.objects.get(pk=pk)
-            public.likes += 1
+            public.likes += 1 
             public.save()
     except:
         return redirect(register)
-    return HttpResponseRedirect('/')
+    return redirect(main)
 
 def add_dislike(request, pk):
     try:
