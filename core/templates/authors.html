@@ -4,8 +4,8 @@
     {% for author in authors %}
                     <div class="main-public">
                         <div class="main-public2">
-                            <h1 class="public-zago">{{ author.nik }}</h1>
-                            <a href="{% url 'author' author.id %}" class="public-text">{{ author.user.username }}</a>
+                            <h1 class="public-zago">{{ author.nik }} <img src="https://icon-library.com/images/no-user-image-icon/no-user-image-icon-9.jpg" alt="..." class="img-thumbnail andimg"></h1>
+                            <a href="{% url 'author' author.id %}" class="public-text">🧔🏽 {{ author.user.username }}</a>
                         </div>
                     </div> 
                 {% endfor %}

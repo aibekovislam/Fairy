@@ -235,6 +235,11 @@ body{
 
 .public-text{
   color: #000000;
+  text-decoration: none;
+}
+
+.andimg{
+  float: right; /* Выравнивание по правому краю */
 }
 
 .main-public{
