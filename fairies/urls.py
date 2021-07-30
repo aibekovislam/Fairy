@@ -15,5 +15,6 @@ urlpatterns = [
     path('dislike/<int:pk>/', add_dislike, name="add_dislike"),
     path('publish/', publish, name="publish"),
     path('author/<int:pk>/', author, name="author"),
-    path("authors/", authors, name="authors")
+    path("authors/", authors, name="authors"),
+    path('delete/<int:pk>/', delete_publics, name="delete_publics")
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

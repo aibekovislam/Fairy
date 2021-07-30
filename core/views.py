@@ -88,6 +88,7 @@ def publish(request):
         new_publish.save()
         user = request.user
 
+
         if not Author.objects.filter(user=user).exists():
             author = Author(user=user, nik=user.username)
             author.save()
@@ -95,7 +96,7 @@ def publish(request):
         author = user.author
         new_publish.author = author
         new_publish.save()
-        return redirect (main)
+        return redirect (main, publish)
 
 
 def author(request, pk):
@@ -110,3 +111,8 @@ def author(request, pk):
 def authors(request):
     authors = Author.objects.all()
     return render(request, "authors.html", {"authors": authors})
+
+def delete_publics(request, pk):
+    public = Publics.objects.get(pk=pk)
+    public.delete()
+    return redirect(main)
