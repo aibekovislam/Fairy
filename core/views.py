@@ -10,9 +10,12 @@ from django.http import Http404
 # Create your views here.
 
 def main(request):
-    publics = Publics.objects.all()
-    publics = Publics.objects.order_by('-date')
-    return render(request, "main.html", {"publics": publics})
+    if request.user.is_authenticated:
+        publics = Publics.objects.all()
+        publics = Publics.objects.order_by('-date')
+        return render(request, "main.html", {"publics": publics})
+    if not request.user.is_authenticated:
+        return render(request, "index.html")
 
 
 def sign_in(request):
