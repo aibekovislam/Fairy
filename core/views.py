@@ -105,3 +105,8 @@ def author(request, pk):
         "user": author.user
     }
     return render(request, "author_page.html", context)
+
+
+def authors(request):
+    authors = Author.objects.all()
+    return render(request, "authors.html", {"authors": authors})

@@ -16,41 +16,41 @@
 </head>
 <body>
 
- <div class="d-flex" id="wrapper">
-        <!-- Sidebar -->
-        <div class="bg-white" id="sidebar-wrapper">
-            <div class="sidebar-heading text-center py-4 custom-text fs-3 fw-bold border-bottom"><i></i>Fairy</div>
-            <div class="list-group list-group-flush my-3">
-                <a href="{% url 'main' %}" class="list-group-item list-group-item-action bg-transparent second-text glavnaya"><i
-                        class="fas fa-tachometer-alt me-2"></i>Главная</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-project-diagram me-2"></i>Интересное</a>
-                <a href="{% url 'publish' %}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-chart-line me-2"></i>Опубликовать</a>
-                {% for authors in author %}
-                    <a href="{% url 'authors' authors.id %}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+    <div class="d-flex" id="wrapper">
+            <!-- Sidebar -->
+            <div class="bg-white" id="sidebar-wrapper">
+                <div class="sidebar-heading text-center py-4 custom-text fs-3 fw-bold border-bottom"><i></i>Fairy</div>
+                <div class="list-group list-group-flush my-3">
+                    <a href="{% url 'main' %}" class="list-group-item list-group-item-action bg-transparent second-text glavnaya"><i
+                            class="fas fa-tachometer-alt me-2"></i>Главная</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                            class="fas fa-project-diagram me-2"></i>Интересное</a>
+                    <a href="{% url 'publish' %}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                            class="fas fa-chart-line me-2"></i>Опубликовать</a>
+                    <a href="{% url 'authors' %}" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
                             class="fas fa-paperclip me-2"></i>Авторы</a>
-                {% endfor %}
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-shopping-cart me-2"></i>Store Mng</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-gift me-2"></i>Products</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-comment-dots me-2"></i>Chat</a>
-                <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-map-marker-alt me-2"></i>Outlet</a>
-                <a href="{% url 'logout' %}" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
-                        class="fas fa-power-off me-2"></i>{% if request.user.is_authenticated %}Выйти{% endif %}</a>
-                {% if not request.user.is_authenticated %}<button class="btn-custom"><a href="{% url 'sign-in' %}">Войти</a></button>{% endif %}
+                    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                            class="fas fa-shopping-cart me-2"></i>Store Mng</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                            class="fas fa-gift me-2"></i>Products</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                            class="fas fa-comment-dots me-2"></i>Chat</a>
+                    <a href="#" class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
+                            class="fas fa-map-marker-alt me-2"></i>Outlet</a>
+                    <a href="{% url 'logout' %}" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
+                            class="fas fa-power-off me-2"></i>{% if request.user.is_authenticated %}Выйти{% endif %}</a>
+                    {% if not request.user.is_authenticated %}<button class="btn-custom"><a href="{% url 'sign-in' %}">Войти</a></button>{% endif %}
+                </div>
             </div>
-        </div>
+
+
         <!-- /#sidebar-wrapper -->
 
         <!-- Page Content -->
         <div id="page-content-wrapper">
             <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                 <div class="d-flex align-items-right">
-                    <h1 class="zago-custom">Главная</h1>
+                    <h1 class="zago-custom"></h1>
                 </div>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for author in authors %}
+                    <div class="main-public">
+                        <div class="main-public2">
+                            <h1 class="public-zago">{{ author.nik }}</h1>
+                            <a href="{% url 'author' author.id %}" class="public-text">{{ author.user.username }}</a>
+                        </div>
+                    </div> 
+                {% endfor %}
+{% endblock content %}
