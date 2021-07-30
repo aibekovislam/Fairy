@@ -1,31 +1,26 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    
-        <div class="form">
-          <div class="title">Опубликовать</div>
-          <div class="subtitle">Начни опубликовать прямо сейчас</div>
+  
+<div class="container">
+  <div class="row align-items-center">
+      <div class="col-sm-6">
+        <div class="form-publish">
           <form method="POST" enctype="multipart/form-data">
             {% csrf_token %}
-              <div class="input-container ic1">
-                <input type="text" class="input" name="title" placeholder="Заголовок">
-                <div class="cut"></div>
-              </div>
-              <div class="input-container ic2">
-                <input type="text" class="input" name="text" placeholder="Описание"></input>
-                <div class="cut"></div>
-              </div>
-              <div class="input-container ic2">
-                <input type="file" name="image" placeholder="Картинка">
-
-              <button type="text" class="submit">Зарегистрироваться</button>
+            <input type="text" class="input-publish" name="title" placeholder="Заголовок">
+            <textarea name="text" id="text-publish" cols="43" rows="5" placeholder="Описание"></textarea>
+            <button class="btn-publish">Опубликовать</button>
           </form>
+        </div>
+      <div class="col-sm-6">
+        <div class="zago-public">
+          <h1>Публикуй все!</h1>
         </div>
       </div>
     </div>
   </div>
-  
-
+</div>
 
   
 {% endblock content %}

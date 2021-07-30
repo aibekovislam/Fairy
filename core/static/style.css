@@ -382,3 +382,58 @@ footer a {
 
 
 
+
+
+/* Publish Form*/
+
+
+.form-publish{
+  display: flex;
+  width: 100%;
+  height: 100%;
+  margin-top: 60px;
+  margin-left: 100px;
+  justify-content: center;
+}
+
+.input-publish{
+  border: none;
+  width: 400px;
+  height: 50px;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 20px;
+}
+
+#text-publish{
+  border: none;
+  border-radius: 25px;
+  padding: 20px;
+  margin: 20px;
+}
+
+
+.btn-publish{
+  border: none;
+  background-color: #0088dd;
+  color: white;
+  width: 400px;
+  height: 50px;
+  border-radius: 25px;
+  transition-duration: 0.3s;
+  margin: 20px;
+  text-align: center;
+}
+
+.btn-publish:hover{
+  background-color: #0475bb;
+  transition-duration: 0.3s;
+}
+
+.zago-public h1{
+  position: relative;
+  left: 750px;
+  bottom: 300px;
+  font-size: 50px;
+}
+
