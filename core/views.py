@@ -15,6 +15,14 @@ def main(request):
         publics = Publics.objects.order_by('-date')
         return render(request, "main.html", {"publics": publics})
     if not request.user.is_authenticated:
+        if request.method == 'POST':
+            username = request.POST.get('username')
+            password = request.POST.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                if user.is_active:
+                    login(request, user)
+                    return redirect('main')
         return render(request, "index.html")
 
 
