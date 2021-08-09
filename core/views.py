@@ -7,7 +7,6 @@ from django.contrib.auth import authenticate, logout, login
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
 
-# Create your views here.
 
 def main(request):
     if request.user.is_authenticated:
