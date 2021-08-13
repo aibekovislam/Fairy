@@ -4,6 +4,7 @@
                     <div class="main-public">
                         <div class="main-public2">
                             <h1 class="public-zago">{{ public.title }}</h1>
+                            <img {% if public.image %} src="{{ public.image.url }}"{% endif %} alt="Картинка статьи" class="img img-fluid">
                             <p class="public-text">{{ public.text }}</p>
                             <label for="toggle-heart" aria-label="like"><a href="{% url 'add_like' public.pk %}" class="like">❤</a> {{ public.likes }} Лайков</label>
                             <label for="toggle-heart" aria-label="like"><a href="{% url 'add_dislike' public.pk %}" class="like">👎🏻</a> {{ public.dislikes }} Дизлайки</label>

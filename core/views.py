@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout, login
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
-
+from django.contrib.auth.decorators import login_required
 
 def main(request):
     if request.user.is_authenticated:
@@ -23,7 +23,6 @@ def main(request):
                     login(request, user)
                     return redirect('main')
         return render(request, "index.html")
-
 
 def sign_in(request):
     if request.method == 'POST':

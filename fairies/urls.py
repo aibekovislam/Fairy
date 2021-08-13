@@ -17,4 +17,5 @@ urlpatterns = [
     path('author/<int:pk>/', author, name="author"),
     path("authors/", authors, name="authors"),
     path('delete/<int:pk>/', delete_publics, name="delete_publics")
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
+  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
