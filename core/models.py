@@ -72,6 +72,7 @@ class Author(models.Model):
         blank=False,
         on_delete=models.CASCADE
     )
+    photo = models.ImageField(upload_to="Author_photos", null=True, blank=True)
 
     nik = models.CharField(max_length=55)
 
