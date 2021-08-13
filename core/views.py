@@ -95,7 +95,7 @@ def publish(request):
         author = user.author
         new_publish.author = author
         new_publish.save()
-        return redirect (main, publish)
+        return redirect (main)
 
 
 def author(request, pk):

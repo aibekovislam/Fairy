@@ -8,6 +8,9 @@
                             <label for="toggle-heart" aria-label="like"><a href="{% url 'add_like' public.pk %}" class="like">❤</a> {{ public.likes }} Лайков</label>
                             <label for="toggle-heart" aria-label="like"><a href="{% url 'add_dislike' public.pk %}" class="like">👎🏻</a> {{ public.dislikes }} Дизлайки</label>
                             <label for="toggle-heart" aria-label="like"><a href="#" class="like">🧔🏽</a> {{ public.author.nik }}</label>
+                            {% if user.is_authenticated %}
+                                <label for="toggle-heart" aria-label="like"><a href="{% url 'delete_publics' public.id %}" class="likes">🚯 Удалить</a></label>
+                            {% endif %}
                         </div>
                     </div> 
                 {% endfor %}
