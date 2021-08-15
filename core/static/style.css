@@ -18,8 +18,8 @@ body{
 
 .zago{
   padding-top: 70px;
-  font-size: 150px;
-  color: #0088dd;
+  font-size: 120px;
+  color: #049b55;
   font-family: "Peace Sans";
 }
 
@@ -56,6 +56,7 @@ body{
 
 .register_class{
   padding-top: 20px;
+  color: #049b55;
 }
 
 .input-container {
@@ -88,7 +89,7 @@ body{
 
 
 .submit {
-  background-color: #08d;
+  background-color: #049b55;
   border-radius: 12px;
   border: 0;
   box-sizing: border-box;
@@ -206,7 +207,7 @@ body{
 }
 
 .custom-text{
-  color: #0088dd;
+  color: #049b55;
   font-family: "Peace Sans";
   font-weight: normal;
   
@@ -440,7 +441,7 @@ footer a {
 
 .btn-publish{
   border: none;
-  background-color: #0088dd;
+  background-color: #049b55;
   color: white;
   width: 400px;
   height: 50px;
@@ -451,7 +452,7 @@ footer a {
 }
 
 .btn-publish:hover{
-  background-color: #0475bb;
+  background-color: #035e33;
   transition-duration: 0.3s;
 }
 
