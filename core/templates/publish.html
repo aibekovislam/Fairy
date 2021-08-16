@@ -10,7 +10,10 @@
             {% csrf_token %}
             <input type="text" class="input-publish" name="title" placeholder="Заголовок">
             <textarea name="text" id="text-publish" cols="43" rows="5" placeholder="Описание"></textarea>
-            <input type="file" name="image">
+            <div class="mb-3">
+            <label for="formFile" class="form-label ms-4">Картинка публикации.</label>
+            <input class="form-control ms-4" type="file" id="formFile" name="image">
+          </div>
             <button class="btn-publish">Опубликовать</button>
           </form>
         </div>
