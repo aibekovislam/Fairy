@@ -116,10 +116,9 @@ def delete_publics(request, pk):
     return redirect(main)
 
 
-def comments(request, pk):
-    comment = Comments.objects.get(pk=pk)
-    context={
-        "comment": comment,
-        "user": author.user
+def comment(request):
+    comment = Comments.objects.all()
+    context = {
+        "comment": comment
     }
     return render(request, context, "comments.html")

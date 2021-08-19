@@ -102,7 +102,7 @@ class Comments(models.Model):
         null=True, blank=True,
         verbose_name="Публикации"
     )
-
+    id = models.AutoField(primary_key=True ,unique=True)
     comment = models.TextField(null=True, blank=False)
     author = models.ForeignKey(
         to="Author",
