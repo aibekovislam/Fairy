@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, logout, login
 from django.core.exceptions import ObjectDoesNotExist
 from django.http import Http404
-from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404
 
 def main(request):
     if request.user.is_authenticated:
@@ -114,3 +114,12 @@ def delete_publics(request, pk):
     public = Publics.objects.get(pk=pk)
     public.delete()
     return redirect(main)
+
+
+def comments(request, pk):
+    comment = Comments.objects.get(pk=pk)
+    context={
+        "comment": comment,
+        "user": author.user
+    }
+    return render(request, context, "comments.html")

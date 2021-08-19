@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.deletion import CASCADE
 from django.db.models.fields import related
 
 
@@ -43,12 +44,20 @@ class Publics(models.Model):
         verbose_name=("Автор")
     )
 
+    comments = models.ForeignKey(
+        to="Comments",
+        null=True, blank=True,
+        verbose_name="Комментарий",
+        on_delete=models.CASCADE,
+        related_name="Comments"
+    )
+
 
     readers = models.ManyToManyField(
         to=User,
         related_name = "readers",
         blank=True, 
-        verbose_name="Читатели"
+        verbose_name="Подписчики"
     )
 
     likes = models.IntegerField(default=0, verbose_name="Лайки")
@@ -82,3 +91,31 @@ class Author(models.Model):
 
     def __str__(self):
         return self.nik
+
+
+
+class Comments(models.Model):
+    public = models.ForeignKey(
+        to="Publics",
+        on_delete=CASCADE,
+        related_name="publics",
+        null=True, blank=True,
+        verbose_name="Публикации"
+    )
+
+    comment = models.TextField(null=True, blank=False)
+    author = models.ForeignKey(
+        to="Author",
+        on_delete=CASCADE,
+        related_name="comments",
+        null=True,
+        blank=True,
+        verbose_name="Автор"
+    )
+
+    class Meta:
+        verbose_name = "Комментарий"
+        verbose_name_plural = "Комментарий"
+
+    def __str__(self):
+        return self.comment
