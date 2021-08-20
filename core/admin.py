@@ -5,4 +5,3 @@ from .models import *
 admin.site.register(Users)
 admin.site.register(Publics)
 admin.site.register(Author)
-admin.site.register(Comments)

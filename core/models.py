@@ -44,14 +44,6 @@ class Publics(models.Model):
         verbose_name=("Автор")
     )
 
-    comments = models.ForeignKey(
-        to="Comments",
-        null=True, blank=True,
-        verbose_name="Комментарий",
-        on_delete=models.CASCADE,
-        related_name="Comments"
-    )
-
 
     readers = models.ManyToManyField(
         to=User,
@@ -94,28 +86,3 @@ class Author(models.Model):
 
 
 
-class Comments(models.Model):
-    public = models.ForeignKey(
-        to="Publics",
-        on_delete=CASCADE,
-        related_name="publics",
-        null=True, blank=True,
-        verbose_name="Публикации"
-    )
-    id = models.AutoField(primary_key=True ,unique=True)
-    comment = models.TextField(null=True, blank=False)
-    author = models.ForeignKey(
-        to="Author",
-        on_delete=CASCADE,
-        related_name="comments",
-        null=True,
-        blank=True,
-        verbose_name="Автор"
-    )
-
-    class Meta:
-        verbose_name = "Комментарий"
-        verbose_name_plural = "Комментарий"
-
-    def __str__(self):
-        return self.comment
